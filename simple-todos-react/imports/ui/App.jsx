@@ -1,4 +1,5 @@
 import React from 'react';
+import { Task } from './Task';
 
 const tasks = [
   {_id: 1, text: 'Test 1'},
