@@ -1,0 +1,7 @@
+{
+    "galaxy.meteor.com": {
+      "env": {
+        "MONGO_URL": "mongodb://username:<password>@org-dbname-01.mongodb.galaxy-cloud.io"
+      }
+    }
+  }
