@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TasksCollection } from "/imports/api/TasksCollection";
+import { Meteor } from "meteor/meteor";
 
 export const TaskForm = () => {
   const [text, setText] = useState("");

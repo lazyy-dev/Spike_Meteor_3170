@@ -127,6 +127,14 @@ header {
   justify-self: flex-end;
   background-color: #ff3046;
 }
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter > button {
+  background-color: #62807e;
+}
 
 .login-form {
   display: flex;
@@ -164,7 +172,6 @@ header {
 .login-form > div > button {
   background-color: #62807e;
 }
-
 .user {
   display: flex;
 

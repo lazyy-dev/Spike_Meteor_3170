@@ -1,8 +1,7 @@
 import { Meteor } from "meteor/meteor";
-import { Accounts } from 'meteor/accounts-base';
-import { TasksCollection } from "/imports/api/TasksCollection";
-import "../imports/api/TasksPublications"; 
-import "../imports/api/tasksMethods"; 
+import { TasksCollection } from "../imports/api/TasksCollection";
+import "../imports/api/TasksMethods";
+import "../imports/api/TasksPublications";
 
 const insertTask = (taskText, user) =>
   TasksCollection.insertAsync({
@@ -11,8 +10,8 @@ const insertTask = (taskText, user) =>
     createdAt: new Date(),
   });
 
-const SEED_USERNAME = 'meteorite';
-const SEED_PASSWORD = 'password';
+const SEED_USERNAME = "meteorite";
+const SEED_PASSWORD = "password";
 
 Meteor.startup(async () => {
   if (!(await Accounts.findUserByUsername(SEED_USERNAME))) {
@@ -21,9 +20,7 @@ Meteor.startup(async () => {
       password: SEED_PASSWORD,
     });
   }
-
   const user = await Accounts.findUserByUsername(SEED_USERNAME);
-
 
   if ((await TasksCollection.find().countAsync()) === 0) {
     [
@@ -36,5 +33,4 @@ Meteor.startup(async () => {
       "Seventh Task",
     ].forEach((taskText) => insertTask(taskText, user));
   }
-  
 });
